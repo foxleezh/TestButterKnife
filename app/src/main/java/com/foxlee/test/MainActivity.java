@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_jump)
     Button btnJump;
 
+    @BindString(R.string.jump)
+    String stringJump;
+
     private Unbinder unbinder;
 
     @Override
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         unbinder=ButterKnife.bind(this);
+
+        btnJump.setText(stringJump);
     }
 
 
